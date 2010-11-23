@@ -37,7 +37,6 @@ import com.github.jsr303br.impl.CNPJValidator;
  * existe e possui situação válida.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 @Documented
 @Constraint(validatedBy = { CNPJValidator.class })

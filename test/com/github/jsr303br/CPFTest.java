@@ -26,6 +26,11 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Classe de testes para {@link CPF}.
+ * 
+ * @author Otávio Scherer Garcia
+ */
 public class CPFTest {
 
     private final Validator validator;

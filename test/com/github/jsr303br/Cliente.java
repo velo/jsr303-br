@@ -15,10 +15,6 @@
  */
 package com.github.jsr303br;
 
-import com.github.jsr303br.CEP;
-import com.github.jsr303br.CNPJ;
-import com.github.jsr303br.CPF;
-import com.github.jsr303br.Telefone;
 
 public class Cliente {
 

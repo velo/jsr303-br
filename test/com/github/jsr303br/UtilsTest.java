@@ -22,6 +22,13 @@ import static com.github.jsr303br.util.Utils.onlyDigits;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.github.jsr303br.util.Utils;
+
+/**
+ * Classe de testes para {@link Utils}.
+ * 
+ * @author Otávio Scherer Garcia
+ */
 public class UtilsTest {
 
     @Test

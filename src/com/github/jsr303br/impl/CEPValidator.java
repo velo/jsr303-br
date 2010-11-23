@@ -31,7 +31,6 @@ import com.github.jsr303br.util.Utils;
  * Implementa a validação para {@link CEP}.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 public class CEPValidator
     implements ConstraintValidator<CEP, String> {

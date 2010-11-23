@@ -37,7 +37,6 @@ import com.github.jsr303br.impl.CEPValidator;
  * existe na base dos Correios.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 @Documented
 @Constraint(validatedBy = { CEPValidator.class })

@@ -26,6 +26,11 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Classe de testes para {@link CNPJ}.
+ * 
+ * @author Otávio Scherer Garcia
+ */
 public class CNPJTest {
 
     private final Validator validator;

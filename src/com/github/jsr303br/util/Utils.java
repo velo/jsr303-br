@@ -19,7 +19,6 @@ package com.github.jsr303br.util;
  * Métodos utilitários.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 public final class Utils {
 

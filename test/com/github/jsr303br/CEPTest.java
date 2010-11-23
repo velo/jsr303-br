@@ -26,6 +26,11 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Classe de testes para {@link CEP}.
+ * 
+ * @author Otávio Scherer Garcia
+ */
 public class CEPTest {
 
     private final Validator validator;

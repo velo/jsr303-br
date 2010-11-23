@@ -26,6 +26,11 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Classe de testes para {@link Telefone}.
+ * 
+ * @author Otávio Scherer Garcia
+ */
 public class TelefoneTest {
 
     private final Validator validator;

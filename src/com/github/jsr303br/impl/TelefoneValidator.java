@@ -30,7 +30,6 @@ import com.github.jsr303br.util.Utils;
  * Implementa a validação para {@link Telefone}.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 public class TelefoneValidator
     implements ConstraintValidator<Telefone, String> {

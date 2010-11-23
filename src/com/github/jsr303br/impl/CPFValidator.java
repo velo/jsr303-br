@@ -29,7 +29,6 @@ import com.github.jsr303br.util.Utils;
  * Implementa a validação para {@link CPF}.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 public class CPFValidator
     implements ConstraintValidator<CPF, String> {

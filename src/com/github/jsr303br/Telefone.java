@@ -38,7 +38,6 @@ import com.github.jsr303br.util.RegexConstants;
  * realmente existe.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 @Documented
 @Constraint(validatedBy = { TelefoneValidator.class })

@@ -37,7 +37,6 @@ import com.github.jsr303br.impl.CPFValidator;
  * existe e possui situação válida.
  * 
  * @author Otávio Scherer Garcia
- * @version $Revision$
  */
 @Documented
 @Constraint(validatedBy = { CPFValidator.class })
