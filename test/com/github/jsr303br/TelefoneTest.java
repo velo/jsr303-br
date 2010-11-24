@@ -23,8 +23,6 @@ import javax.validation.Validator;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Classe de testes para {@link Telefone}.
@@ -34,7 +32,6 @@ import org.slf4j.LoggerFactory;
 public class TelefoneTest {
 
     private final Validator validator;
-    private final Logger logger = LoggerFactory.getLogger(TelefoneTest.class);
 
     public TelefoneTest() {
         validator = Validation.buildDefaultValidatorFactory().getValidator();
@@ -52,24 +49,19 @@ public class TelefoneTest {
 
         // valores nulos são considerados válidos
         violations = validator.validate(new Cliente().setTelefone0(null));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         // cep não formatado
         violations = validator.validate(new Cliente().setTelefone0("5199999999"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         violations = validator.validate(new Cliente().setTelefone0("51.9999.9999"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setTelefone1("5199999999"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setTelefone1("51.9999.9999"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
     }
 }

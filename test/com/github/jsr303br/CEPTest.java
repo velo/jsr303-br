@@ -23,8 +23,6 @@ import javax.validation.Validator;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Classe de testes para {@link CEP}.
@@ -34,7 +32,6 @@ import org.slf4j.LoggerFactory;
 public class CEPTest {
 
     private final Validator validator;
-    private final Logger logger = LoggerFactory.getLogger(CEPTest.class);
 
     public CEPTest() {
         validator = Validation.buildDefaultValidatorFactory().getValidator();
@@ -52,25 +49,19 @@ public class CEPTest {
 
         // valores nulos são considerados válidos
         violations = validator.validate(new Cliente().setCep0(null));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         // cep não formatado
         violations = validator.validate(new Cliente().setCep0("92115000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         violations = validator.validate(new Cliente().setCep0("92115-000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCep1("92115000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCep1("92115-000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
     }
-
 }

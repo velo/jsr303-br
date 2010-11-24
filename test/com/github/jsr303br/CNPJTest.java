@@ -23,8 +23,6 @@ import javax.validation.Validator;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Classe de testes para {@link CNPJ}.
@@ -34,7 +32,6 @@ import org.slf4j.LoggerFactory;
 public class CNPJTest {
 
     private final Validator validator;
-    private final Logger logger = LoggerFactory.getLogger(CNPJTest.class);
 
     public CNPJTest() {
         validator = Validation.buildDefaultValidatorFactory().getValidator();
@@ -52,33 +49,25 @@ public class CNPJTest {
 
         // valores nulos são considerados válidos
         violations = validator.validate(new Cliente().setCnpj0(null));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         // cep não formatado
         violations = validator.validate(new Cliente().setCnpj0("41886576000185"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         violations = validator.validate(new Cliente().setCnpj0("41.886.576/0001-85"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCnpj1("41886576000185"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCnpj1("41.886.576/0001-85"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         violations = validator.validate(new Cliente().setCnpj0("00000000000000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCnpj1("00000000000000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
-
     }
 }

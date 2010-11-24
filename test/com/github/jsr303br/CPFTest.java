@@ -23,8 +23,6 @@ import javax.validation.Validator;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Classe de testes para {@link CPF}.
@@ -34,7 +32,6 @@ import org.slf4j.LoggerFactory;
 public class CPFTest {
 
     private final Validator validator;
-    private final Logger logger = LoggerFactory.getLogger(CPFTest.class);
 
     public CPFTest() {
         validator = Validation.buildDefaultValidatorFactory().getValidator();
@@ -52,33 +49,25 @@ public class CPFTest {
 
         // valores nulos são considerados válidos
         violations = validator.validate(new Cliente().setCpf0(null));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         // cep não formatado
         violations = validator.validate(new Cliente().setCpf0("65249324800"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         violations = validator.validate(new Cliente().setCpf0("652.493.248-00"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCpf1("65249324800"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCpf1("652.493.248-00"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 0);
 
         violations = validator.validate(new Cliente().setCpf0("00000000000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
 
         violations = validator.validate(new Cliente().setCpf1("00000000000"));
-        logger.debug(violations.toString());
         Assert.assertTrue(violations.size() == 1);
-
     }
 }
