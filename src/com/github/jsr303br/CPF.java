@@ -48,7 +48,7 @@ public @interface CPF {
     /**
      * Mensagem retornada quando a validação falhar.
      */
-    String message() default "não é um CPF válido.";
+    String message() default "{cpf.error}";
 
     /**
      * Indica se o valor do campo é formatado ou não.

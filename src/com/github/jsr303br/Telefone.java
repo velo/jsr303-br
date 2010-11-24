@@ -50,7 +50,7 @@ public @interface Telefone {
     /**
      * Mensagem retornada quando a validação falhar.
      */
-    String message() default "não é um telefone válido.";
+    String message() default "{telefone.error}";
 
     /**
      * Indica se o valor do campo é formatado ou não.

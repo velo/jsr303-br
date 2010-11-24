@@ -48,7 +48,7 @@ public @interface CEP {
     /**
      * Mensagem retornada quando a validação falhar.
      */
-    String message() default "não é um CEP válido.";
+    String message() default "{cep.error}";
 
     /**
      * Indica se o valor do campo é formatado ou não.
